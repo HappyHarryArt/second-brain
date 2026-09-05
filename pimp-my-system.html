@@ -114,23 +114,8 @@
   ein lokales Modell bleibt lokal — 100&nbsp;% privat, 0&nbsp;€ pro Frage.</p>
 </section>
 
-<section class="card gold">
-  <h2><span class="num">A</span>Der Club-Weg: der AI-Bunker</h2>
-  <p>Als Club-Mitglied hast du Zugang zur <b>API des AI-Bunkers</b> — ein souveränes
-  KI-Gateway, betrieben in Deutschland. Das ist der Weg mit dem <b>hervorragendsten
-  Datenschutz</b>: Deine Textstellen bleiben in deutscher Infrastruktur, unterliegen der DSGVO,
-  werden nicht für Training verwendet — und du kennst die Menschen, die das Ding betreiben,
-  persönlich aus dem Club. Für ein System, das dein Tagebuch enthält, ist das ein anderes
-  Vertrauensniveau als jeder Konzern-Dienst.</p>
-  <p>Dazu kann der Bunker mehr als Text: <b>Embeddings, Whisper (Sprache→Text), Sprachausgabe,
-  Bild-Verständnis</b>. Damit wächst dein Second Brain in Richtung „alles aus einer Hand":
-  Sprachmemos werden durchsuchbar, das System liest dir Zusammenfassungen vor, Fotos bekommen
-  Beschreibungen — Werkzeuge wie NotebookLM brauchst du dann womöglich gar nicht mehr, weil dein
-  eigenes Archiv das alles kann. Zugang/Konditionen: im Club fragen.</p>
-</section>
-
 <section class="card green">
-  <h2><span class="num">B</span>Der Gratis-Weg: kostenlose LLM-APIs</h2>
+  <h2><span class="num">A</span>Der Gratis-Weg: kostenlose LLM-APIs</h2>
   <p>Mehrere Anbieter haben kostenlose Kontingente, die jedes lokale 8-GB-Modell deutlich
   übertreffen — z.&nbsp;B. Google AI Studio (Gemini Flash), Groq (rasend schnelle offene
   Modelle) oder die <code>:free</code>-Modelle bei OpenRouter. Für den Einstieg völlig
@@ -142,7 +127,7 @@
 </section>
 
 <section class="card blue">
-  <h2><span class="num">C</span>Wenn es ernst wird: bezahlte APIs für Cent-Beträge</h2>
+  <h2><span class="num">B</span>Wenn es ernst wird: bezahlte APIs für Cent-Beträge</h2>
   <p>Der Schritt von „gratis" zu „bezahlt" ist kleiner als gedacht: Eine typische Antwort über
   dein Archiv kostet bei Pay-per-Use <b>Bruchteile eines Cents bis wenige Cent</b> — ein
   intensiver Monat weniger als ein Kinobesuch. Dafür fallen die Limits weg, die Datenregeln
@@ -153,14 +138,14 @@
     aller Anbieter. Du wechselst das Modell wie einen Fernsehkanal, statt überall Konten zu
     pflegen.</li>
     <li><b>LiteLLM:</b> eine kleine lokale „Steckdosenleiste" für KI-Anbieter. Dein Memory-System
-    spricht immer nur mit LiteLLM — welcher Anbieter dahinter steckt (Bunker, Gratis-API,
+    spricht immer nur mit LiteLLM — welcher Anbieter dahinter steckt (lokal, Gratis-API,
     OpenRouter), stellst du in EINER Konfigurationsdatei um. Anbieterwechsel ohne Umbau,
     Kosten-Protokoll und Ausweichmodell inklusive: Fällt der externe Dienst aus, antwortet
     wieder dein lokales Modell.</li>
   </ul>
 </section>
 
-<h2 style="margin:30px 0 0;">Die vier Stufen im Vergleich</h2>
+<h2 style="margin:30px 0 0;">Die drei Stufen im Vergleich</h2>
 
 <div class="tablewrap">
 <table>
@@ -170,12 +155,6 @@
     <td>perfekt — nichts verlässt den Rechner</td>
     <td>Praktikant: ok für Kurzes</td>
     <td>0&nbsp;€</td>
-  </tr>
-  <tr>
-    <td><b>AI-Bunker</b> (Club)</td>
-    <td>hervorragend — DE, DSGVO, kein Training, Betreiber persönlich bekannt</td>
-    <td>stark, plus Audio/Bild-Fähigkeiten</td>
-    <td>Club-Konditionen</td>
   </tr>
   <tr>
     <td><b>Gratis-APIs</b></td>
@@ -191,7 +170,7 @@
   </tr>
 </table>
 </div>
-<p class="note">In allen vier Stufen gilt: Archiv, Embeddings und Suche bleiben lokal — extern
+<p class="note">In allen drei Stufen gilt: Archiv, Embeddings und Suche bleiben lokal — extern
 reist immer nur Frage + Fundstellen. Und dank LiteLLM ist keine Entscheidung endgültig.</p>
 
 <section class="card rose">
@@ -221,8 +200,8 @@ Fundstellen gehen an die API.
 
 1. Schau dir an, wie mein Memory-System aktuell antwortet (lokales
    Ollama-Modell?) und wo die Konfiguration liegt.
-2. Frag mich, welchen Anbieter ich nutzen will (Club-Bunker /
-   Gratis-API / OpenRouter) und richte die Anbindung ein — idealerweise
+2. Frag mich, welchen Anbieter ich nutzen will (Gratis-API /
+   OpenRouter) und richte die Anbindung ein — idealerweise
    über LiteLLM als Zwischenschicht, damit ich später wechseln kann.
 3. Den API-Schlüssel trage ICH selbst in die .env-Datei ein — lege sie
    an, sag mir wo, und sorge dafür, dass sie nicht in Backups/Git
