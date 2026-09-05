@@ -6,54 +6,59 @@
 <title>Don's Dairy · Schritt 1: Starterpaket</title>
 <style>
   :root{
-    --ink:#2b2620; --ink2:#6d6355; --cream:#faf6ef; --line:#eadfce;
-    --red:#cc0000; --gold:#e9b949;
-    --t-gold:#fdf6e3; --t-green:#eef4e6; --t-rose:#fbeef0; --t-blue:#ecf1f6; --t-amber:#fff7e0;
+    --ink:#2d2a33; --ink2:#6e6580; --cream:#f8d5f2; --line:#eed4ec;
+    --red:#c2337a; --gold:#e070c8;
+    --grund:#f8d5f2; --karte:#faf3fe; --linie:#eed4ec; --blau:#6b5bd6; --gruen:#1f8a4c; --rot:#c2337a; --lila:#482d9e;
+    --t-gold:#fdeaf4; --t-green:#eaf6ef; --t-rose:#fae0f4; --t-blue:#f6f3fd; --t-amber:#f8dcf1;
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--cream);color:var(--ink);
        font:17px/1.62 -apple-system,'Segoe UI','Helvetica Neue',sans-serif;
-       -webkit-text-size-adjust:100%;}
+       -webkit-text-size-adjust:100%;
+       /* Caro-Design: Kringel wie beim Konsensomat, reine Deko */
+       background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='440' height='440' viewBox='0 0 440 440'><g fill='none' stroke='%23e2a0da' stroke-width='1.5'><ellipse cx='220' cy='220' rx='150' ry='138' transform='rotate(8 220 220)'/><ellipse cx='224' cy='216' rx='172' ry='156' transform='rotate(-14 220 220)'/><ellipse cx='216' cy='224' rx='196' ry='176' transform='rotate(24 220 220)'/></g></svg>"),url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='440' height='440' viewBox='0 0 440 440'><g fill='none' stroke='%23e2a0da' stroke-width='1.5'><ellipse cx='220' cy='220' rx='150' ry='138' transform='rotate(8 220 220)'/><ellipse cx='224' cy='216' rx='172' ry='156' transform='rotate(-14 220 220)'/><ellipse cx='216' cy='224' rx='196' ry='176' transform='rotate(24 220 220)'/></g></svg>");
+       background-repeat:no-repeat,no-repeat;
+       background-position:left -150px top -120px,right -170px bottom -140px;}
   .page{max-width:720px;margin:0 auto;padding:34px 18px 64px;}
-  header.masthead{padding:26px 26px 22px;border-radius:18px;
-    background:linear-gradient(135deg,#fff4d6,#fbe4e8 70%);border:1px solid var(--line);}
-  h1{margin:0;font-size:1.9rem;letter-spacing:-.01em;line-height:1.25;}
+  header.masthead{padding:26px 26px 22px;border-radius:22px;
+    background:var(--karte);border:1px solid var(--line);}
+  h1{margin:0;font-size:1.9rem;letter-spacing:-.01em;line-height:1.25;color:var(--lila);}
   .kicker{font-size:.95rem;color:var(--ink2);margin:0 0 4px;text-transform:uppercase;letter-spacing:.12em;}
   .kicker .heart{color:var(--red);}
-  .lead{margin:8px 0 0;font-size:1.08rem;color:#5a5346;}
+  .lead{margin:8px 0 0;font-size:1.08rem;color:#6e6580;}
   .callout{margin:22px 0 0;padding:14px 18px;border-radius:12px;background:var(--t-amber);
-    border:1px solid #ecdca0;font-size:.95rem;color:#5a4a20;}
-  .callout b{color:#7a5c10;}
-  section.card{margin:20px 0 0;padding:20px 22px;border-radius:14px;border:1px solid var(--line);
-    background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.02);}
+    border:1px solid #e2a0da;font-size:.95rem;color:#2d2a33;}
+  .callout b{color:#482d9e;}
+  section.card{margin:20px 0 0;padding:20px 22px;border-radius:22px;border:1px solid var(--line);
+    background:var(--karte);box-shadow:0 1px 0 rgba(0,0,0,.02);}
   section.gold{background:var(--t-gold);} section.green{background:var(--t-green);}
   section.rose{background:var(--t-rose);} section.blue{background:var(--t-blue);}
   h2{margin:0 0 12px;font-size:1.22rem;display:flex;align-items:center;gap:10px;}
-  .num{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;
+  .num{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--blau);color:#fff;
     font-size:.95rem;display:grid;place-items:center;font-weight:700;}
   p{margin:.5em 0;} .card > p:first-of-type{margin-top:0;} .card > p:last-child{margin-bottom:0;}
   ul{margin:.5em 0;padding-left:1.2em;} li{margin:.3em 0;}
-  pre{white-space:pre-wrap;background:#2c2824;color:#f2ead9;border-radius:12px;
+  pre{white-space:pre-wrap;background:#2d2a33;color:#eed4ec;border-radius:12px;
     padding:16px 18px;font:13.5px/1.55 ui-monospace,'SF Mono',Menlo,monospace;overflow-x:auto;}
-  code{background:#f2ead9;padding:1px 6px;border-radius:6px;font-size:.88em;}
-  .dl{display:inline-block;margin:8px 0 2px;padding:12px 20px;border-radius:12px;background:#2c2824;
-    color:#fdf6e3;font-weight:700;text-decoration:none;}
+  code{background:#eed4ec;padding:1px 6px;border-radius:6px;font-size:.88em;}
+  .dl{display:inline-block;margin:8px 0 2px;padding:12px 20px;border-radius:12px;background:#2d2a33;
+    color:#fdeaf4;font-weight:700;text-decoration:none;}
   .dl:hover{background:#443c33;}
   .dlmeta{font-size:.85rem;color:var(--ink2);margin-top:6px;}
-  .closer{margin:20px 0 0;padding:18px 22px;border-radius:14px;background:#2c2824;color:#f4ecdd;}
-  .closer i{color:#f0d9a0;}
+  .closer{margin:20px 0 0;padding:18px 22px;border-radius:14px;background:#2d2a33;color:#faf3fe;}
+  .closer i{color:#e070c8;}
   .legend{margin-top:34px;padding:16px 20px;border-radius:12px;background:#fff;border:1px solid var(--line);
     font-size:.9rem;color:var(--ink2);}
-  .legend a{color:#b23;}
-  .foot{margin-top:26px;color:#a99f8d;text-align:center;}
-  .foot .jp{font-size:1.05rem;color:#8a8070;} .foot .power{font-weight:700;margin-top:6px;color:#8a8070;}
+  .legend a{color:#6b5bd6;}
+  .foot{margin-top:26px;color:#6e6580;text-align:center;}
+  .foot .jp{font-size:1.05rem;color:#482d9e;} .foot .power{font-weight:700;margin-top:6px;color:#482d9e;}
   @media(max-width:520px){h1{font-size:1.45rem}.page{padding:24px 14px 50px}}
 </style>
 </head>
 <body>
 <div class="page">
 
-<p style="margin:0 0 10px"><a href="index.html" style="color:#8a8070;text-decoration:none;font-size:.9rem">&larr; Don's Dairy · Übersicht</a></p>
+<p style="margin:0 0 10px"><a href="index.html" style="color:#482d9e;text-decoration:none;font-size:.9rem">&larr; Don's Dairy · Übersicht</a></p>
 
 <header class="masthead">
   <p class="kicker"><span class="heart">&hearts;</span> Don's Dairy</p>
@@ -137,7 +142,7 @@
 
 <div class="legend">
   <b>Bisher in <span style="color:var(--red)">&hearts;</span> Don's Dairy:</b><br>
-  Schritt 1 · Dein persönliches lokales Gedächtnis — Starterpaket <span style="color:#a99f8d">(diese Seite, ZIP oben)</span><br>
+  Schritt 1 · Dein persönliches lokales Gedächtnis — Starterpaket <span style="color:#6e6580">(diese Seite, ZIP oben)</span><br>
   Nachtrag 1 zu Schritt 1 · Ein lokales Denk-Modell (Gemma 3)<br>
   Nachtrag 2 zu Schritt 1 · Das Interface — anpassen per Zuruf<br>
   Schritt 2 · Erdung — dein Zwilling darf nicht dichten<br>
@@ -157,10 +162,10 @@
   <div class="jp">千里の道も一歩から。</div>
   <div style="font-size:.9rem;">Auch ein Weg von tausend Meilen beginnt mit dem ersten Schritt.</div>
   <div class="power">以心伝心</div>
-  <div style="margin-top:14px"><a href="index.html" style="color:#8a8070;text-decoration:none;font-size:.9rem">&larr; Don's Dairy · Übersicht</a></div>
+  <div style="margin-top:14px"><a href="index.html" style="color:#482d9e;text-decoration:none;font-size:.9rem">&larr; Don's Dairy · Übersicht</a></div>
 </div>
 
-<div style="margin-top:26px;padding-top:14px;border-top:1px solid #eadfce;font-size:.78rem;line-height:1.55;color:#a99f8d;">
+<div style="margin-top:26px;padding-top:14px;border-top:1px solid #eed4ec;font-size:.78rem;line-height:1.55;color:#6e6580;">
 <b>Rechtlicher Hinweis / Haftungsausschluss:</b> Diese Seiten dokumentieren private Lern- und
 Bastelprojekte und werden ohne Gewähr bereitgestellt. Alle Anleitungen, Prompts und Empfehlungen
 sind sorgfältig erstellt, ersetzen aber keine professionelle Beratung. Die Umsetzung erfolgt auf
@@ -170,7 +175,7 @@ System ein Backup. Genannte Produkte, Preise und Konditionen Dritter (z.&nbsp;B.
 API-Anbieter) können sich jederzeit ändern; für die Inhalte verlinkter externer Seiten sind
 ausschließlich deren Betreiber verantwortlich. Alle genannten Marken sind Eigentum ihrer
 jeweiligen Inhaber. <b>Open Source:</b> Alle eigenen Inhalte, Anleitungen, Prompts und Software
-dieser Seiten stehen unter der MIT-No-Attribution-Lizenz (<a href="LICENSE" style="color:#a99f8d">MIT-0</a>) —
+dieser Seiten stehen unter der MIT-No-Attribution-Lizenz (<a href="LICENSE" style="color:#6e6580">MIT-0</a>) —
 du darfst damit alles tun: nutzen, verändern, weitergeben, auch kommerziell. Eine Namensnennung
 (Volker Haigis) ist willkommen, aber nicht erforderlich. Quellcode und Mitarbeit: <a href="https://github.com/HappyHarryArt/second-brain" style="color:inherit">github.com/HappyHarryArt/second-brain</a>.
 </div>
