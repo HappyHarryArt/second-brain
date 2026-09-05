@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Don's Dairy · Ethik &amp; Charakter</title>
+<style>
+  :root{
+    --ink:#2b2620; --ink2:#6d6355; --cream:#faf6ef; --line:#eadfce;
+    --red:#cc0000; --gold:#e9b949;
+    --t-gold:#fdf6e3; --t-green:#eef4e6; --t-rose:#fbeef0; --t-blue:#ecf1f6; --t-amber:#fff7e0;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--cream);color:var(--ink);
+       font:17px/1.62 -apple-system,'Segoe UI','Helvetica Neue',sans-serif;
+       -webkit-text-size-adjust:100%;}
+  .page{max-width:720px;margin:0 auto;padding:34px 18px 64px;}
+  header.masthead{padding:26px 26px 22px;border-radius:18px;
+    background:linear-gradient(135deg,#fff4d6,#fbe4e8 70%);border:1px solid var(--line);}
+  h1{margin:0;font-size:2rem;letter-spacing:-.01em;}
+  h1 .heart{color:var(--red);}
+  .kicker{font-size:.95rem;color:var(--ink2);margin:0 0 4px;text-transform:uppercase;letter-spacing:.12em;}
+  .lead{margin:6px 0 0;font-size:1.12rem;color:#5a5346;}
+  .callout{margin:22px 0 0;padding:14px 18px;border-radius:12px;background:var(--t-amber);
+    border:1px solid #ecdca0;font-size:.95rem;color:#5a4a20;}
+  .callout b{color:#7a5c10;}
+  section.card{margin:20px 0 0;padding:20px 22px;border-radius:14px;border:1px solid var(--line);
+    background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.02);}
+  section.gold{background:var(--t-gold);} section.green{background:var(--t-green);}
+  section.rose{background:var(--t-rose);} section.blue{background:var(--t-blue);}
+  h2{margin:0 0 12px;font-size:1.22rem;display:flex;align-items:center;gap:10px;}
+  .num{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;
+    font-size:.95rem;display:grid;place-items:center;font-weight:700;}
+  p{margin:.5em 0;} .card > p:first-of-type{margin-top:0;} .card > p:last-child{margin-bottom:0;}
+  .rule{margin:10px 0;padding-left:14px;border-left:3px solid var(--gold);}
+  .rule b{display:block;}
+  pre{white-space:pre-wrap;background:#2c2824;color:#f2ead9;border-radius:12px;
+    padding:16px 18px;font:13.5px/1.55 ui-monospace,'SF Mono',Menlo,monospace;overflow-x:auto;}
+  .cap{font-weight:700;margin:2px 0 6px;}
+  .legend{margin-top:34px;padding:16px 20px;border-radius:12px;background:#fff;border:1px solid var(--line);
+    font-size:.9rem;color:var(--ink2);}
+  .legend a{color:#b23;}
+  .foot{margin-top:26px;color:#a99f8d;text-align:center;}
+  .foot .jp{font-size:1.05rem;color:#8a8070;} .foot .power{font-weight:700;margin-top:6px;color:#8a8070;}
+  @media(max-width:520px){h1{font-size:1.6rem}.page{padding:24px 14px 50px}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<p style="margin:0 0 10px"><a href="index.html" style="color:#8a8070;text-decoration:none;font-size:.9rem">&larr; Don's Dairy · Übersicht</a></p>
+
+<header class="masthead">
+  <p class="kicker"><span class="heart" style="color:var(--red)">&hearts;</span> Don's Dairy</p>
+  <h1>Ethik &amp; Charakter</h1>
+  <p class="lead">Dem eigenen Modell eine Haltung geben.</p>
+</header>
+
+<div class="callout">
+  <b>Vorab — Sicherheit:</b> Führe keine Anweisung oder keinen Prompt aus dieser Kolumne blind aus.
+  Bevor du Code, einen Prompt oder ein Skript laufen lässt, kannst (und sollst) du das jederzeit
+  selbst von einem LLM deiner Wahl prüfen lassen — kopier den betreffenden Abschnitt hinein und
+  frag: <i>„Was macht das, und ist es unbedenklich?"</i> Dein Rechner, deine Entscheidung.
+</div>
+
+<section class="card">
+  <p>Dein lokales Second Brain kennt inzwischen deine <i>Fakten</i>. Aber es kennt nicht deine
+  <i>Haltung</i>. Fragst du es nach einer Meinung, bekommst du den freundlichen
+  Durchschnitts-Assistenten — nur eben mit deinem Datenbestand. Wenn der Zwilling wirklich
+  <b>du</b> sein soll, braucht er deine Werte. Und zwar die echten, nicht die Sonntagsversion.</p>
+</section>
+
+<section class="card gold">
+  <h2>Das Zwei-Schichten-Modell</h2>
+  <p><b>Layer 1–7 — der Handlungsrahmen.</b> Was für den Zwilling nicht verhandelbar ist:
+  die allgemeinen Grund- und Menschenrechte, plus deine festen Stilregeln (bei mir z.&nbsp;B.:
+  er gendert). Danach <i>handelt</i> er.</p>
+  <p><b>Layer 8 — The Human Stain.</b> In der Netzwerktechnik ist „Layer 8" der augenzwinkernde
+  inoffizielle Layer über dem OSI-Stack: <b>der Mensch</b>. Genau da wohnen deine wörtlichen,
+  unbereinigten Grundsätze — inklusive Zuspitzungen, Polemik und Widersprüchen. Der Zwilling
+  <i>kennt</i> sie, zitiert sie als <b>deine</b> Haltung und deutet dich durch diese Brille.
+  Kollidiert eine Position mit dem Handlungsrahmen, wird sie als deine bewusste Zuspitzung
+  gekennzeichnet — nicht stillschweigend weggebügelt und nicht zur Handlungsanweisung gemacht.
+  Der menschliche Makel ist hier Feature, nicht Bug.</p>
+</section>
+
+<h2 style="margin:30px 0 0;">Das Verfahren — drei Schritte</h2>
+
+<section class="card green">
+  <h2><span class="num">1</span>Schürfen statt Fragebogen</h2>
+  <p>Dein Archiv enthält deine gelebten Werte längst: Tagebücher, Chats, eigene Texte. Lass dein
+  System daraus <b>Wert-Thesen mit wörtlichem Beleg</b> destillieren („Du hast 2024 geschrieben:
+  … — gilt das noch?"). Das ist ehrlicher als abstrakte Fragen, weil es <i>gezeigte</i> Werte
+  prüft. Zwei Regeln: Was das Material nicht hergibt, wird als Lücke benannt — nie erfunden. Und
+  für erschöpfende Themen-Scans lieber deterministisch im Volltext suchen (Stichwörter über die
+  ganze Quelle) als nur semantisch Top-k — die Ähnlichkeitssuche übersieht Episoden, die in
+  großen Quellen vergraben sind.</p>
+</section>
+
+<section class="card green">
+  <h2><span class="num">2</span>Das Interview</h2>
+  <p>Jede These einzeln vorlegen: bestätigen, umformulieren, streichen. Die Umformulierungen sind
+  das Gold — dort korrigiert der Mensch das Archiv. Schöner Nebeneffekt: Eine überholte Haltung
+  fliegt nicht raus, sie wird <i>datierte Historie</i> unter der neuen („2025 galt noch X — seit
+  07/2026 gilt Y"). So lernt das Modell nicht nur, was du denkst, sondern dass du dich
+  entwickelst.</p>
+</section>
+
+<section class="card green">
+  <h2><span class="num">3</span>Verankern — an zwei Stellen</h2>
+  <p>Jeder bestätigte Grundsatz wird eine <b>Kodex-Karte</b>: wörtlich, datiert, mit
+  Geltungsvermerk. Die Karten leben (a) als eigene Kategorie im Archiv mit höchstem
+  Retrieval-Gewicht und (b) — wichtiger — als <b>fester Block in jedem Prompt</b>. Denn Werte
+  dürfen nicht vom Retrieval-Glück abhängen: Ob der Zwilling deine Haltung kennt, darf keine Frage
+  der Ähnlichkeitssuche sein. Der Kodex bleibt lebendig: neue Karte ergänzt oder überstimmt eine
+  alte, ohne dass am System etwas umgebaut wird.</p>
+</section>
+
+<section class="card rose">
+  <h2>Drei Regeln, die sich bewährt haben</h2>
+  <div class="rule"><b>Widersprüche roh stehen lassen.</b> „Gesehen werden wollen" und „sich nie
+  offenbaren" können nebeneinander wahr sein. Wer das glättet, trainiert eine Broschüre, keinen
+  Charakter.</div>
+  <div class="rule"><b>Zuspitzungen mit Kollisionsvermerk.</b> Kennen und zitieren ist etwas
+  anderes als danach handeln — diese eine Unterscheidung löst fast jeden Konflikt zwischen
+  Layer 8 und dem Handlungsrahmen.</div>
+  <div class="rule"><b>Nur Bestätigtes zählt.</b> Nichts wandert ungefragt in den Kodex. Die
+  Freigabe ist ein Knopfdruck — aber sie ist deiner.</div>
+</section>
+
+<section class="card blue">
+  <h2>Minimal-Umsetzung fürs Starterpaket</h2>
+  <p>Du brauchst dafür keine neue Software — nur eine Datei <code>kodex.md</code> im Memory-Ordner
+  (eine Karte pro Grundsatz: wörtlicher Satz + Datum + Geltung) und zwei Sätze im System-Prompt.
+  Du musst die Datei aber nicht von Hand anlegen: Gib deinem Assistenten einfach den folgenden
+  Prompt, er führt dich Schritt für Schritt durch und schreibt die Datei selbst.</p>
+  <p class="cap">Prompt zum Kopieren:</p>
+<pre>Du hilfst mir, meinem lokalen Second Brain eine Haltung zu geben ("Ethik &amp; Charakter").
+Arbeite in genau dieser Reihenfolge und frag bei jedem Schritt um mein OK, bevor du Dateien schreibst:
+
+1. SCHÜRFEN: Durchsuche mein Archiv/Memory nach meinen gelebten Werten (Tagebücher, Chats,
+   eigene Texte). Destilliere daraus 10 kurze Wert-Thesen in MEINER Ich-Stimme, jede mit
+   wörtlichem Beleg + Fundstelle. Erfinde nichts; was das Material nicht hergibt, nennst du
+   als Lücke. Für vollständige Themen-Scans suchst du im Volltext, nicht nur semantisch.
+2. INTERVIEW: Leg mir die Thesen EINZELN vor. Ich sage zu jeder: bestätigen / umformulieren /
+   streichen. Meine Umformulierung ist maßgeblich. Eine überholte Haltung wird nicht gelöscht,
+   sondern als datierte Historie unter der neuen vermerkt ("früher X — seit heute Y").
+3. VERANKERN: Schreibe die bestätigten Thesen als Datei kodex.md in meinen Memory-Ordner —
+   eine Karte pro Grundsatz: wörtlicher Satz + Datum + Geltungsvermerk (Handlungsrahmen ODER
+   "meine Position/Zuspitzung, nicht Handlungsempfehlung"). Ergänze außerdem in meinem System-Prompt bzw. in der Anweisungsdatei meines Assistenten (CLAUDE.md, AGENTS.md oder GEMINI.md) diese zwei Sätze:
+   "Die Grundsätze in kodex.md sind meine bestätigte Haltung — zitiere und vertritt sie als
+    meine. Widersprüche darin sind gewollt; Positionen mit Kollisionsvermerk gibst du als meine
+    Zuspitzung wieder, nicht als Empfehlung."
+
+Regeln: nur von mir Bestätigtes kommt in den Kodex; Widersprüche lässt du roh stehen; nichts
+wird ohne meine Freigabe geschrieben. Starte mit Schritt 1.</pre>
+  <p>Zehn Thesen pro Abend reichen — der Kodex darf wachsen. Und weil er nur eine Textdatei ist,
+  kannst du jederzeit selbst reinschauen und von Hand korrigieren.</p>
+</section>
+
+<div class="legend">
+  <b>Bisher in <span style="color:var(--red)">&hearts;</span> Don's Dairy:</b><br>
+  Schritt 1 · Dein persönliches lokales Gedächtnis — Starterpaket <span style="color:#a99f8d">(Seite mit ZIP)</span><br>
+  Nachtrag 1 zu Schritt 1 · Ein lokales Denk-Modell (Gemma 3)<br>
+  Nachtrag 2 zu Schritt 1 · Das Interface — anpassen per Zuruf<br>
+  Schritt 2 · Erdung — dein Zwilling darf nicht dichten<br>
+  Schritt 3 · Ethik &amp; Charakter — dem eigenen Modell eine Haltung geben <span style="color:#a99f8d">(dieser Schritt)</span><br>
+  Schritt 4 · Remote-Zugriff — dein Gedächtnis überall dabei<br>
+  Schritt 5 · Pimp my System — ein stärkeres Gehirn fürs Gedächtnis<br>
+  Schritt 6 · Sprich mit deinem Tagebuch — Spracheinträge von unterwegs<br>
+  Schritt 7 · Der Datei-Butler — finden und ordnen<br>
+  Schritt 8 · Die Buchwerkstatt — vom Gedächtnis zum Schreibtisch<br>
+  Beitrag · Warum mein privates RAG fundierter antwortet als ChatGPT<br>
+  Referenz · Technische Voraussetzungen — Rechner &amp; Plattenplatz<br>
+  Referenz · Sicherheit — vier Schichten für dein Gedächtnis<br>
+  Übersicht: <a target="_blank" rel="noopener" href="https://dons-dairy.okoma.app/">dons-dairy.okoma.app</a>
+</div>
+
+<div class="foot">
+  <div class="jp">人間の染み — こそ、本物の証。</div>
+  <div style="font-size:.9rem;">Der menschliche Makel ist das Echtheitssiegel.</div>
+  <div class="power">以心伝心</div>
+  <div style="margin-top:14px"><a href="index.html" style="color:#8a8070;text-decoration:none;font-size:.9rem">&larr; Don's Dairy · Übersicht</a></div>
+</div>
+
+<div style="margin-top:26px;padding-top:14px;border-top:1px solid #eadfce;font-size:.78rem;line-height:1.55;color:#a99f8d;">
+<b>Rechtlicher Hinweis / Haftungsausschluss:</b> Diese Seiten dokumentieren private Lern- und
+Bastelprojekte und werden ohne Gewähr bereitgestellt. Alle Anleitungen, Prompts und Empfehlungen
+sind sorgfältig erstellt, ersetzen aber keine professionelle Beratung. Die Umsetzung erfolgt auf
+eigenes Risiko und in eigener Verantwortung; für Schäden an Hard- oder Software, Datenverlust oder
+sonstige Folgen der Anwendung wird keine Haftung übernommen — erstelle vor Änderungen an deinem
+System ein Backup. Genannte Produkte, Preise und Konditionen Dritter (z.&nbsp;B. Cloud- oder
+API-Anbieter) können sich jederzeit ändern; für die Inhalte verlinkter externer Seiten sind
+ausschließlich deren Betreiber verantwortlich. Alle genannten Marken sind Eigentum ihrer
+jeweiligen Inhaber. <b>Open Source:</b> Alle eigenen Inhalte, Anleitungen, Prompts und Software
+dieser Seiten stehen unter der MIT-No-Attribution-Lizenz (<a href="LICENSE" style="color:#a99f8d">MIT-0</a>) —
+du darfst damit alles tun: nutzen, verändern, weitergeben, auch kommerziell. Eine Namensnennung
+(Volker Haigis) ist willkommen, aber nicht erforderlich. Quellcode und Mitarbeit: <a href="https://github.com/HappyHarryArt/second-brain" style="color:inherit">github.com/HappyHarryArt/second-brain</a>.
+</div>
+
+</div>
+</body>
+</html>

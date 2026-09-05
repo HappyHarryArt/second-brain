@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Projekt Second Brain — Don's Dairy</title>
+<style>
+  /* Farbschema Flieder, seit 05.09.2026 Standard: identisch mit konsensomat.happyharry.art/info */
+  :root{
+    --ink:#2d2a33; --ink2:#6e6580; --grund:#f8d5f2; --karte:#faf3fe; --linie:#eed4ec;
+    --blau:#6b5bd6; --gruen:#1f8a4c; --rot:#c2337a; --gold:#e070c8; --lila:#482d9e;
+    /* Aliasnamen fuer die Inline-Stile im Body */
+    --cream:var(--grund); --line:var(--linie); --red:var(--rot);
+    --t-gold:#fdeaf4; --t-blue:#f6f3fd; --t-green:#eaf6ef;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--grund);color:var(--ink);
+       font:17px/1.6 -apple-system,'Segoe UI','Helvetica Neue',sans-serif;
+       -webkit-text-size-adjust:100%;
+       /* Handgezeichnete Kringel wie beim Konsensomat: reine Deko, kein Nachladen */
+       background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='440' height='440' viewBox='0 0 440 440'><g fill='none' stroke='%23e2a0da' stroke-width='1.5'><ellipse cx='220' cy='220' rx='150' ry='138' transform='rotate(8 220 220)'/><ellipse cx='224' cy='216' rx='172' ry='156' transform='rotate(-14 220 220)'/><ellipse cx='216' cy='224' rx='196' ry='176' transform='rotate(24 220 220)'/></g></svg>"),url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='440' height='440' viewBox='0 0 440 440'><g fill='none' stroke='%23e2a0da' stroke-width='1.5'><ellipse cx='220' cy='220' rx='150' ry='138' transform='rotate(8 220 220)'/><ellipse cx='224' cy='216' rx='172' ry='156' transform='rotate(-14 220 220)'/><ellipse cx='216' cy='224' rx='196' ry='176' transform='rotate(24 220 220)'/></g></svg>");
+       background-repeat:no-repeat,no-repeat;
+       background-position:left -150px top -120px,right -170px bottom -140px;}
+  .page{max-width:720px;margin:0 auto;padding:34px 18px 64px;}
+  header.masthead{padding:28px 26px 24px;border-radius:22px;background:var(--karte);border:1px solid var(--linie);}
+  h1{margin:0;font-size:2.1rem;letter-spacing:-.02em;color:var(--lila);}
+  h1 .heart{color:var(--rot);}
+  .lead{margin:8px 0 0;color:var(--ink2);}
+  h2.group{font-size:.85rem;text-transform:uppercase;letter-spacing:.12em;color:var(--blau);margin:30px 0 10px;}
+  .card{background:var(--karte);border:1px solid var(--linie);border-radius:22px;padding:16px 20px;margin:0 0 12px;}
+  .card.gold{background:#fff;} .card.blue{background:var(--karte);}
+  a.t{font-weight:700;color:var(--ink);text-decoration:none;font-size:1.08rem;}
+  a.t:hover{color:var(--blau);}
+  .meta{font-size:.82rem;color:var(--ink2);margin:3px 0 7px;}
+  .desc{margin:0;font-size:.98rem;} code{background:var(--linie);padding:1px 6px;border-radius:6px;font-size:.88em;}
+  .aio{display:inline-block;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+    border:1px solid var(--blau);color:var(--blau);border-radius:999px;padding:1px 9px;margin-left:8px;
+    vertical-align:2px;white-space:nowrap;}
+  .aio.no{border-color:var(--linie);color:var(--ink2);}
+  .sub{margin:8px 0 0;padding:8px 0 0;border-top:1px dashed var(--linie);font-size:.9rem;}
+  .grouphint{font-size:.85rem;color:var(--ink2);margin:-6px 0 12px;}
+  .hint{font-size:.86rem;color:var(--ink2);border-top:1px solid var(--linie);margin-top:32px;padding-top:16px;}
+  .foot{margin-top:22px;color:var(--ink2);text-align:center;}
+  .foot .power{font-weight:700;color:var(--lila);}
+  /* Schnell-Lese-Zeile wie beim Konsensomat: die Idee in 15 Sekunden, vorgefuehrt statt erklaert */
+  .mini-rsvp{background:#ecdcfa;border:1px solid var(--linie);border-radius:14px;
+    padding:12px 10px 8px;margin:18px 0 0;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}
+  .mr-wort{display:grid;grid-template-columns:1fr auto 1fr;align-items:baseline;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:clamp(1.3rem,4.5vw,1.7rem);white-space:pre;line-height:1.2}
+  #mr-orp{color:var(--rot);font-weight:700}
+  .mr-balken{height:2px;background:var(--linie);border-radius:1px;margin:8px 0 0;overflow:hidden}
+  .mr-balken i{display:block;height:100%;width:0;background:var(--gold)}
+  .mr-hint{font-size:.72rem;color:var(--ink2);text-align:center;margin:6px 0 0}
+  @media(max-width:520px){h1{font-size:1.7rem}.page{padding:24px 14px 50px}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<p style="margin:0 0 10px"><a href="index.html" style="color:var(--ink2);text-decoration:none;font-size:.9rem">&larr; Don's Dairy — alle Projekte</a></p>
+<header class="masthead">
+  <h1>Projekt Second Brain</h1>
+  <p class="lead">Dein privates, durchsuchbares Gedächtnis auf deinem eigenen Rechner. 100&nbsp;% lokal, ohne Cloud, ohne Konten, ohne laufende Kosten.</p>
+</header>
+
+<div class="mini-rsvp" id="mr" title="Antippen: Pause / Weiter">
+  <div class="mr-wort"><span id="mr-pre"></span><span id="mr-orp"></span><span id="mr-post"></span></div>
+  <div class="mr-balken"><i id="mr-i"></i></div>
+  <div class="mr-hint">Die Idee in 15 Sekunden · antippen hält an</div>
+</div>
+
+<div class="card blue" style="margin-top:18px">
+  <p class="desc" style="font-size:1.02rem"><b>Wofür das gut ist.</b> Notizen, Dokumente, Chats und Sprachmemos liegen verstreut
+  in Clouds und fremden KI-Gedächtnissen. Das Second Brain sammelt sie an einem Ort, der dir gehört,
+  und antwortet mit Fundstellen statt mit Behauptungen. Aufbau in etwa 15 Minuten per Kopier-Prompt,
+  ohne Programmierkenntnisse.</p>
+  <p class="desc" style="margin-top:10px">Für neurodivergente Menschen ist es Arbeitsgedächtnis, Zeitachse und
+  nüchterner Sparringspartner in einem. Es urteilt nicht, es findet.</p>
+  <div style="margin-top:14px;padding:10px 14px;border:1.5px solid var(--gold);border-radius:10px;
+       background:var(--t-gold);display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+    <span style="font-size:1.4rem" aria-hidden="true">&#128230;</span>
+    <p class="desc" style="margin:0;flex:1;min-width:220px">
+      <a class="t" href="second-brain.zip" download>Gesamtausgabe zum Mitnehmen (second-brain.zip, 0,6&nbsp;MB)</a><br>
+      Alle Seiten offline: entpacken, <code>start.html</code> öffnen. Weitergeben erwünscht.
+    </p>
+  </div>
+</div>
+
+<h2 class="group">Vorher lesen</h2>
+<p class="grouphint">Zwei Seiten, bevor du anfängst: Passt mein Rechner? Was muss geschützt sein?</p>
+
+<div class="card">
+  <a class="t" target="_blank" rel="noopener" href="technische-voraussetzungen.html">Technische Voraussetzungen</a><span class="aio">im AIO</span>
+  <div class="meta">Faustregel: 1.000 Seiten ≈ 10 MB, mit Vergleichstabelle</div>
+  <p class="desc">Welcher Rechner reicht, wie viel Platz das Archiv braucht.</p>
+</div>
+
+<div class="card">
+  <a class="t" target="_blank" rel="noopener" href="sicherheit.html">Sicherheit, vier Schichten</a><span class="aio">im AIO</span>
+  <p class="desc">Festplattenverschlüsselung · Benutzerkonto + Sperre · verschlüsselte Backups · keine offenen Zugänge. Mit Sicherheits-Check-Prompt.</p>
+</div>
+
+<div class="card">
+  <a class="t" target="_blank" rel="noopener" href="warum-rag-fundierter-als-memory.html">Warum ein privates Archiv fundierter antwortet als ChatGPT mit „Memory“</a><span class="aio">im AIO</span>
+  <div class="meta">Grundsatz-Beitrag · 09.07.2026</div>
+  <p class="desc">Material statt Merkzettel · Suchen statt hoffen · Belegen statt plaudern · Zeit verstehen.</p>
+</div>
+
+<h2 class="group">1 · Aufbauen</h2>
+<p class="grouphint">Das Fundament: Gedächtnis installieren, dann das Lügen abgewöhnen.</p>
+
+<div class="card gold">
+  <a class="t" target="_blank" rel="noopener" href="starterpaket.html">Das Starterpaket</a><span class="aio">im AIO</span>
+  <div class="meta">Seite mit ZIP-Download</div>
+  <p class="desc">Privates Second Brain auf dem eigenen Rechner. Installation per Kopier-Prompt mit einem KI-Coding-Assistenten (Claude Code, Codex CLI, Gemini CLI, Cursor); der MCP-Server läuft mit jedem MCP-fähigen Assistenten.</p>
+  <p class="sub">Zwei Nachträge dazu:
+  <a class="t" target="_blank" rel="noopener" href="nachtrag-lokales-denkmodell.html">Ein lokales Denk-Modell</a> (Gemma 3 via Ollama, offline, 0 €) &nbsp;·&nbsp;
+  <a class="t" target="_blank" rel="noopener" href="nachtrag-interface.html">Das Interface anpassen per Zuruf</a> (eine HTML-Datei, gebaut zum Verändern).</p>
+</div>
+
+<div class="card gold">
+  <a class="t" target="_blank" rel="noopener" href="erdung.html">Erdung: dein Zwilling darf nicht dichten</a><span class="aio">im AIO</span>
+  <p class="desc">Fünf Regeln, die aus einem Archiv einen ehrlichen Gesprächspartner machen. Mit Fangfragen-Test und Kopier-Prompt.</p>
+</div>
+
+<div class="card gold">
+  <a class="t" target="_blank" rel="noopener" href="ethik-und-charakter.html">Ethik &amp; Charakter: dem Modell eine Haltung geben</a><span class="aio">im AIO</span>
+  <p class="desc">Zwei Schichten, drei Schritte, ein Kopier-Prompt für die Minimal-Umsetzung.</p>
+</div>
+
+<h2 class="group">2 · Füttern</h2>
+<p class="grouphint">Damit das Gedächtnis wächst, ohne dass du tippst.</p>
+
+<div class="card">
+  <a class="t" target="_blank" rel="noopener" href="sprich-mit-deinem-tagebuch.html">Sprich mit deinem Tagebuch</a><span class="aio">im AIO</span>
+  <p class="desc">Sprachmemo aufs Handy, zu Hause lokal transkribiert, fertig ist der datierte Eintrag. Mit Kopier-Prompt für den Ordner-Wächter.</p>
+</div>
+
+<div class="card">
+  <a class="t" target="_blank" rel="noopener" href="datei-butler.html">Der Datei-Butler</a><span class="aio">im AIO</span>
+  <p class="desc">Dateien semantisch finden, ohne etwas zu bewegen; aufräumen nur mit Vorschau und Undo. Mit Kopier-Prompt.</p>
+</div>
+
+<h2 class="group">3 · Ausbauen</h2>
+<p class="grouphint">Mehr Denkkraft, mehr Reichweite. Jede Stufe unabhängig, Reihenfolge egal.</p>
+
+<div class="card">
+  <a class="t" target="_blank" rel="noopener" href="pimp-my-system.html">Pimp my System: ein stärkeres Gehirn</a><span class="aio">im AIO</span>
+  <p class="desc">Archiv und Suche bleiben lokal, nur das Denken wird stärker: AI-Bunker des Clubs, kostenlose oder bezahlte APIs für Cents. Mit Vier-Stufen-Vergleich.</p>
+</div>
+
+<div class="card">
+  <a class="t" target="_blank" rel="noopener" href="remote-zugriff.html">Remote-Zugriff: dein Gedächtnis überall dabei</a><span class="aio">im AIO</span>
+  <p class="desc">Von unterwegs aufs lokale Second Brain, ohne offenen Port. Tailscale als Standard, Tunnel als Alternative.</p>
+</div>
+
+<h2 class="group">Spezialwerkstatt</h2>
+
+<div class="card">
+  <a class="t" target="_blank" rel="noopener" href="buchwerkstatt.html">Die Buchwerkstatt: vom Gedächtnis zum Schreibtisch</a><span class="aio no">nicht im AIO</span>
+  <p class="desc">Figuren, Kapitel, Timeline, Manuskript-Export. Jeder Eintrag spiegelt sich ins Archiv.</p>
+</div>
+
+<div class="foot"><div class="power">以心伝心</div></div>
+
+<div style="margin-top:26px;padding-top:14px;border-top:1px solid var(--linie);font-size:.78rem;line-height:1.55;color:var(--ink2);">
+<b>Rechtlicher Hinweis / Haftungsausschluss:</b> Diese Seiten dokumentieren private Lern- und
+Bastelprojekte und werden ohne Gewähr bereitgestellt. Alle Anleitungen, Prompts und Empfehlungen
+sind sorgfältig erstellt, ersetzen aber keine professionelle Beratung. Die Umsetzung erfolgt auf
+eigenes Risiko und in eigener Verantwortung; für Schäden an Hard- oder Software, Datenverlust oder
+sonstige Folgen der Anwendung wird keine Haftung übernommen — erstelle vor Änderungen an deinem
+System ein Backup. Genannte Produkte, Preise und Konditionen Dritter (z.&nbsp;B. Cloud- oder
+API-Anbieter) können sich jederzeit ändern; für die Inhalte verlinkter externer Seiten sind
+ausschließlich deren Betreiber verantwortlich. Alle genannten Marken sind Eigentum ihrer
+jeweiligen Inhaber. <b>Open Source:</b> Alle eigenen Inhalte, Anleitungen, Prompts und Software
+dieser Seiten stehen unter der MIT-No-Attribution-Lizenz (<a href="LICENSE" style="color:var(--ink2)">MIT-0</a>) —
+du darfst damit alles tun: nutzen, verändern, weitergeben, auch kommerziell. Eine Namensnennung
+(Volker Haigis) ist willkommen, aber nicht erforderlich. Quellcode und Mitarbeit: <a href="https://github.com/HappyHarryArt/second-brain" style="color:inherit">github.com/HappyHarryArt/second-brain</a>.
+</div>
+
+</div>
+
+<script>
+// Schnell-Lese-Zeile (RSVP), Bauweise vom Konsensomat uebernommen: rote Fixierstelle,
+// Silbentrennung fuer lange Woerter, kleine Pausen an Satzenden. 600 Woerter je Minute.
+(function () {
+  var TEXT = "Ein Memory erinnert sich ungefähr. Ein Archiv schlägt nach. ChatGPT merkt sich ein paar hundert Merksätze, selektiv, ungefragt, still veraltend. Ein privates Archiv ist das Material selbst: datierte, wörtliche Textbausteine aus Tagebüchern, Chats, Büchern und Notizen. Jede Frage durchsucht das ganze Archiv, statt zu hoffen, dass sich das Modell zufällig das Richtige gemerkt hat. Die Antwort stützt sich auf Fundstellen. Fakt und Deutung bleiben getrennt. Was nicht im Archiv steht, wird gesagt, nicht geraten. Zeitangaben hängen am Eintragsdatum, statt als heute gelesen zu werden. Genau daran altern Memories unbemerkt. Und alles läuft auf deinem Rechner. Deine Daten bleiben bei dir. Kurz: Material statt Merkzettel. Suchen statt hoffen. Belegen statt plaudern. Zeit verstehen.";
+  var V = 'aeiouyäöü', DG = ['sch', 'ch', 'ck'];
+  function vok(c) { return V.indexOf(c.toLowerCase()) > -1; }
+  function teile(w) {
+    if (w.length <= 13) return [w];
+    var s = w.toLowerCase(), schnitte = [], i = 0;
+    while (i < s.length) {
+      while (i < s.length && !vok(s[i])) i++;
+      while (i < s.length && vok(s[i])) i++;
+      var c0 = i;
+      while (i < s.length && !vok(s[i])) i++;
+      if (i >= s.length) break;
+      if (i === c0) continue;
+      var c = i - 1;
+      for (var d = 0; d < DG.length; d++)
+        if (i - DG[d].length >= c0 && s.slice(i - DG[d].length, i) === DG[d]) { c = i - DG[d].length; break; }
+      if (c > 1) schnitte.push(c);
+    }
+    var raus = [], rest = w;
+    while (rest.length > 13) {
+      var ok = schnitte.filter(function (x) { return x >= 3 && x <= 12; });
+      var cut = ok.length ? ok[ok.length - 1] : 11;
+      raus.push(rest.slice(0, cut) + '-'); rest = rest.slice(cut);
+      schnitte = schnitte.map(function (x) { return x - cut; });
+    }
+    raus.push(rest); return raus;
+  }
+  var worte = [];
+  TEXT.split(/\s+/).forEach(function (w) {
+    teile(w).forEach(function (t, i, a) { worte.push({ w: t, satz: i === a.length - 1 && /[.!?:]$/.test(t) }); });
+  });
+  var pre = document.getElementById('mr-pre'), orp = document.getElementById('mr-orp'),
+      post = document.getElementById('mr-post'), balken = document.getElementById('mr-i'),
+      feld = document.getElementById('mr');
+  var i = 0, timer = null, laeuft = false, wpm = 600;
+  function orpIx(n) { return n <= 1 ? 0 : n <= 5 ? 1 : n <= 9 ? 2 : 3; }
+  function mal() {
+    var t = worte[i].w, k = orpIx(t.length);
+    pre.textContent = t.slice(0, k); orp.textContent = t.charAt(k); post.textContent = t.slice(k + 1);
+    balken.style.width = ((i + 1) / worte.length * 100) + '%';
+  }
+  function schritt() {
+    mal();
+    var b = 60000 / wpm, f = worte[i].w.length <= 3 ? 0.85 : 1 + Math.max(0, worte[i].w.length - 6) * 0.05;
+    var d = b * f + (worte[i].satz ? b * 0.3 : 0);
+    i++;
+    if (i >= worte.length) { i = 0; laeuft = false; return; }
+    timer = setTimeout(schritt, d);
+  }
+  function start() { laeuft = true; schritt(); }
+  function stopp() { laeuft = false; clearTimeout(timer); }
+  feld.addEventListener('click', function () { laeuft ? stopp() : start(); });
+  mal();
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) setTimeout(start, 700);
+})();
+</script>
+</body>
+</html>

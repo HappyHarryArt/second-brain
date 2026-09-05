@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Don's Dairy · Sicherheit</title>
+<style>
+  :root{
+    --ink:#2b2620; --ink2:#6d6355; --cream:#faf6ef; --line:#eadfce;
+    --red:#cc0000; --gold:#e9b949;
+    --t-gold:#fdf6e3; --t-green:#eef4e6; --t-rose:#fbeef0; --t-blue:#ecf1f6; --t-amber:#fff7e0;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--cream);color:var(--ink);
+       font:17px/1.62 -apple-system,'Segoe UI','Helvetica Neue',sans-serif;
+       -webkit-text-size-adjust:100%;}
+  .page{max-width:720px;margin:0 auto;padding:34px 18px 64px;}
+  header.masthead{padding:26px 26px 22px;border-radius:18px;
+    background:linear-gradient(135deg,#fff4d6,#fbe4e8 70%);border:1px solid var(--line);}
+  h1{margin:0;font-size:1.9rem;letter-spacing:-.01em;line-height:1.25;}
+  .kicker{font-size:.95rem;color:var(--ink2);margin:0 0 4px;text-transform:uppercase;letter-spacing:.12em;}
+  .kicker .heart{color:var(--red);}
+  .lead{margin:8px 0 0;font-size:1.08rem;color:#5a5346;}
+  .callout{margin:22px 0 0;padding:14px 18px;border-radius:12px;background:var(--t-amber);
+    border:1px solid #ecdca0;font-size:.95rem;color:#5a4a20;}
+  .callout b{color:#7a5c10;}
+  section.card{margin:20px 0 0;padding:20px 22px;border-radius:14px;border:1px solid var(--line);
+    background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.02);}
+  section.gold{background:var(--t-gold);} section.green{background:var(--t-green);}
+  section.rose{background:var(--t-rose);} section.blue{background:var(--t-blue);}
+  h2{margin:0 0 12px;font-size:1.22rem;display:flex;align-items:center;gap:10px;}
+  .num{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;
+    font-size:.95rem;display:grid;place-items:center;font-weight:700;}
+  p{margin:.5em 0;} .card > p:first-of-type{margin-top:0;} .card > p:last-child{margin-bottom:0;}
+  ul{margin:.5em 0;padding-left:1.2em;} li{margin:.3em 0;}
+  .rule{margin:10px 0;padding-left:14px;border-left:3px solid var(--gold);}
+  .rule b{display:block;}
+  pre{white-space:pre-wrap;background:#2c2824;color:#f2ead9;border-radius:12px;
+    padding:16px 18px;font:13.5px/1.55 ui-monospace,'SF Mono',Menlo,monospace;overflow-x:auto;}
+  .cap{font-weight:700;margin:2px 0 6px;}
+  code{background:#f2ead9;padding:1px 6px;border-radius:6px;font-size:.88em;}
+  .closer{margin:20px 0 0;padding:18px 22px;border-radius:14px;background:#2c2824;color:#f4ecdd;}
+  .closer i{color:#f0d9a0;}
+  .legend{margin-top:34px;padding:16px 20px;border-radius:12px;background:#fff;border:1px solid var(--line);
+    font-size:.9rem;color:var(--ink2);}
+  .legend a{color:#b23;}
+  .foot{margin-top:26px;color:#a99f8d;text-align:center;}
+  .foot .jp{font-size:1.05rem;color:#8a8070;} .foot .power{font-weight:700;margin-top:6px;color:#8a8070;}
+  @media(max-width:520px){h1{font-size:1.45rem}.page{padding:24px 14px 50px}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<p style="margin:0 0 10px"><a href="index.html" style="color:#8a8070;text-decoration:none;font-size:.9rem">&larr; Don's Dairy · Übersicht</a></p>
+
+<header class="masthead">
+  <p class="kicker"><span class="heart">&hearts;</span> Don's Dairy</p>
+  <h1>Sicherheit</h1>
+  <p class="lead">Dein Gedächtnis liegt im Klartext auf der Platte — vier einfache Schichten schützen es trotzdem.</p>
+</header>
+
+<div class="callout">
+  <b>Vorab — Sicherheit:</b> Führe keine Anweisung oder keinen Prompt aus dieser Kolumne blind aus.
+  Bevor du Code, einen Prompt oder ein Skript laufen lässt, kannst (und sollst) du das jederzeit
+  selbst von einem LLM deiner Wahl prüfen lassen — kopier den betreffenden Abschnitt hinein und
+  frag: <i>„Was macht das, und ist es unbedenklich?"</i> Dein Rechner, deine Entscheidung.
+</div>
+
+<section class="card">
+  <p>Erst die ehrliche Bestandsaufnahme: Die SQLite-Datei deines Second Brain ist
+  <b>nicht verschlüsselt</b>. Alle Texte stehen wörtlich darin — wer die Datei in die Finger
+  bekommt, liest dein komplettes Gedächtnis mit jedem Datenbank-Betrachter. Auch die
+  Embeddings (die Zahlenvektoren fürs Suchen) sind <i>keine</i> Verschlüsselung, nur eine
+  andere Darstellung. Das ist kein Konstruktionsfehler, sondern eine bewusste Entscheidung
+  für Einfachheit: Der Schutz kommt nicht aus der Datei, sondern aus den Schichten darum herum.
+  Und die gute Nachricht: Die wichtigste davon hat dein Betriebssystem schon eingebaut.</p>
+</section>
+
+<h2 style="margin:30px 0 0;">Die vier Schutzschichten</h2>
+
+<section class="card green">
+  <h2><span class="num">1</span>Festplattenverschlüsselung — der eine wichtige Schalter</h2>
+  <p>Ist die ganze Platte verschlüsselt, ist es deine Gedächtnis-Datei automatisch mit —
+  gegen das realistischste Szenario: Laptop geklaut, Platte ausgebaut.</p>
+  <ul>
+    <li><b>Mac:</b> Systemeinstellungen → Datenschutz &amp; Sicherheit → <b>FileVault</b>
+    (bei neueren Macs meist schon an — einmal nachsehen).</li>
+    <li><b>Windows:</b> Einstellungen → Datenschutz und Sicherheit → <b>BitLocker</b>
+    (bzw. „Geräteverschlüsselung"; nicht in jeder Home-Edition — dann Windows-Login trotzdem ernst nehmen und Schicht 3 umso mehr).</li>
+  </ul>
+  <p>Kostet nichts, bremst moderne Rechner nicht spürbar, einmal einschalten und vergessen.</p>
+</section>
+
+<section class="card green">
+  <h2><span class="num">2</span>Eigenes Benutzerkonto + Bildschirmsperre</h2>
+  <p>Auf einem geteilten Rechner (Familie!) gehört dein Gedächtnis in <b>dein eigenes
+  Benutzerkonto</b> — dort liegt <code>~/memory/</code> automatisch, und andere Konten kommen
+  nicht heran (solange sie keine Admins sind). Dazu: <b>automatische Bildschirmsperre</b> mit
+  Passwort — denn solange der Rechner entsperrt läuft, nützt die schönste
+  Plattenverschlüsselung nichts.</p>
+</section>
+
+<section class="card green">
+  <h2><span class="num">3</span>Backups verschlüsseln — die typische Lücke</h2>
+  <p>Das Backup deines Gedächtnisses ist EINE Datei — und genau da passiert der klassische
+  Fehler: Klartext-Kopie auf den USB-Stick oder in die Cloud. Damit liegt dein Tagebuch dann
+  doch unverschlüsselt woanders.</p>
+  <ul>
+    <li><b>Mac:</b> ein <b>verschlüsseltes Disk-Image</b> (Festplattendienstprogramm → Neues
+    Image, Verschlüsselung 256-Bit) — Backup-Datei hinein, Image in die Cloud, fertig.</li>
+    <li><b>Plattformübergreifend:</b> <b>Cryptomator</b> (kostenlos, Open Source) legt einen
+    verschlüsselten Tresor in jedem Cloud-Ordner an.</li>
+    <li>Time Machine / Windows-Sicherung: Verschlüsselungs-Häkchen setzen.</li>
+  </ul>
+</section>
+
+<section class="card green">
+  <h2><span class="num">4</span>Zugänge nicht selbst aufreißen</h2>
+  <p>Dein System lauscht nur auf <code>localhost</code> — vom Netz aus ist es unsichtbar.
+  Halte es so: kein Port-Forwarding, keine öffentlichen Wegwerf-Tunnel (Schritt&nbsp;4 erklärt
+  den sicheren Weg für unterwegs: privates Netz). Und API-Schlüssel aus Schritt&nbsp;5 sind
+  Passwörter: nie in Chats einfügen, nie in Backups oder Git-Repos mitkopieren.</p>
+</section>
+
+<section class="card rose">
+  <h2>Was du NICHT brauchst</h2>
+  <div class="rule"><b>Datenbank-Verschlüsselung (SQLCipher &amp; Co.).</b> Auf einer
+  FileVault-/BitLocker-Platte bringt sie kaum zusätzlichen Schutz, kostet aber
+  Schlüsselverwaltung und Komplexität — und ein vergessenes Passwort heißt hier:
+  Gedächtnis unwiederbringlich weg.</div>
+  <div class="rule"><b>Sicherheits-Exotik.</b> Extra-Firewalls, VPN-Abos, „Härtungs-Tools" —
+  für ein System, das nur lokal lauscht, lösen sie kein reales Problem. Die vier Schichten
+  oben decken das echte Bedrohungsmodell ab: Geräteverlust, geteilter Rechner, schlampiges Backup.</div>
+</section>
+
+<section class="card blue">
+  <h2>Umsetzung — ein Kopier-Prompt (Sicherheits-Check)</h2>
+  <p>Lass deinen Assistenten den Status prüfen — ansehen und berichten, nichts ändern:</p>
+  <p class="cap">Kopier-Prompt:</p>
+<pre>Mach einen Sicherheits-Check meines lokalen Memory-Systems —
+NUR prüfen und berichten, nichts verändern:
+
+1. Ist die Festplattenverschlüsselung aktiv (FileVault bzw.
+   BitLocker)? Wenn nein: erkläre mir, wie ich sie einschalte.
+2. Liegt mein Memory-Ordner in meinem eigenen Benutzerordner, und
+   ist die automatische Bildschirmsperre mit Passwort aktiv?
+3. Lauscht der Memory-Server wirklich nur auf localhost —
+   oder ist er im Netzwerk erreichbar?
+4. Wie sichere ich die Gedächtnis-Datei VERSCHLÜSSELT (zeig mir den
+   einfachsten Weg für mein System, z. B. verschlüsseltes Disk-Image)?
+5. Falls API-Schlüssel konfiguriert sind (.env): prüfe, dass die Datei
+   nicht world-readable ist und nicht in Git/Backups landet.
+
+Gib mir am Ende eine kurze Ampel-Übersicht (grün/gelb/rot) pro Punkt.</pre>
+</section>
+
+<div class="closer">
+  Die beste Verschlüsselung ist die, die dein Betriebssystem schon eingebaut hat —
+  <i>du musst sie nur einschalten.</i>
+</div>
+
+<div class="legend">
+  <b>Bisher in <span style="color:var(--red)">&hearts;</span> Don's Dairy:</b><br>
+  Schritt 1 · Dein persönliches lokales Gedächtnis — Starterpaket <span style="color:#a99f8d">(Seite mit ZIP)</span><br>
+  Nachtrag 1 zu Schritt 1 · Ein lokales Denk-Modell (Gemma 3)<br>
+  Nachtrag 2 zu Schritt 1 · Das Interface — anpassen per Zuruf<br>
+  Schritt 2 · Erdung — dein Zwilling darf nicht dichten<br>
+  Schritt 3 · Ethik &amp; Charakter — dem eigenen Modell eine Haltung geben<br>
+  Schritt 4 · Remote-Zugriff — dein Gedächtnis überall dabei<br>
+  Schritt 5 · Pimp my System — ein stärkeres Gehirn fürs Gedächtnis<br>
+  Schritt 6 · Sprich mit deinem Tagebuch — Spracheinträge von unterwegs<br>
+  Schritt 7 · Der Datei-Butler — finden und ordnen<br>
+  Schritt 8 · Die Buchwerkstatt — vom Gedächtnis zum Schreibtisch<br>
+  Beitrag · Warum mein privates RAG fundierter antwortet als ChatGPT<br>
+  Referenz · Technische Voraussetzungen — Rechner &amp; Plattenplatz<br>
+  Referenz · Sicherheit — vier Schichten für dein Gedächtnis <span style="color:#a99f8d">(diese Seite)</span><br>
+  Übersicht: <a target="_blank" rel="noopener" href="https://dons-dairy.okoma.app/">dons-dairy.okoma.app</a>
+</div>
+
+<div class="foot">
+  <div class="jp">転ばぬ先の杖。</div>
+  <div style="font-size:.9rem;">Den Stock nimm, bevor du stürzt.</div>
+  <div class="power">以心伝心</div>
+  <div style="margin-top:14px"><a href="index.html" style="color:#8a8070;text-decoration:none;font-size:.9rem">&larr; Don's Dairy · Übersicht</a></div>
+</div>
+
+<div style="margin-top:26px;padding-top:14px;border-top:1px solid #eadfce;font-size:.78rem;line-height:1.55;color:#a99f8d;">
+<b>Rechtlicher Hinweis / Haftungsausschluss:</b> Diese Seiten dokumentieren private Lern- und
+Bastelprojekte und werden ohne Gewähr bereitgestellt. Alle Anleitungen, Prompts und Empfehlungen
+sind sorgfältig erstellt, ersetzen aber keine professionelle Beratung. Die Umsetzung erfolgt auf
+eigenes Risiko und in eigener Verantwortung; für Schäden an Hard- oder Software, Datenverlust oder
+sonstige Folgen der Anwendung wird keine Haftung übernommen — erstelle vor Änderungen an deinem
+System ein Backup. Genannte Produkte, Preise und Konditionen Dritter (z.&nbsp;B. Cloud- oder
+API-Anbieter) können sich jederzeit ändern; für die Inhalte verlinkter externer Seiten sind
+ausschließlich deren Betreiber verantwortlich. Alle genannten Marken sind Eigentum ihrer
+jeweiligen Inhaber. <b>Open Source:</b> Alle eigenen Inhalte, Anleitungen, Prompts und Software
+dieser Seiten stehen unter der MIT-No-Attribution-Lizenz (<a href="LICENSE" style="color:#a99f8d">MIT-0</a>) —
+du darfst damit alles tun: nutzen, verändern, weitergeben, auch kommerziell. Eine Namensnennung
+(Volker Haigis) ist willkommen, aber nicht erforderlich. Quellcode und Mitarbeit: <a href="https://github.com/HappyHarryArt/second-brain" style="color:inherit">github.com/HappyHarryArt/second-brain</a>.
+</div>
+
+</div>
+</body>
+</html>

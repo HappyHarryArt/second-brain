@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Persönliches Lokales Gedächtnis — Starterpaket</title>
+<!-- Bunny Fonts: DSGVO-konforme Alternative zu Google Fonts -->
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link href="https://fonts.bunny.net/css?family=noto-serif-jp:400,600|inter:400,500,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0A0A;
+    --surface: #141414;
+    --border: #2A2A2A;
+    --gold: #C8A96E;
+    --text: #E8E4DC;
+    --muted: #8A8578;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px 96px; }
+
+  /* ---------- Hero ---------- */
+  header { text-align: center; padding: 88px 0 64px; }
+
+  .heart {
+    width: 14px; height: 14px; margin: 0 auto 28px;
+    background: var(--gold); border-radius: 50%;
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: .55; }
+    12%      { transform: scale(1.5); opacity: 1; }
+    24%      { transform: scale(1.1); opacity: .8; }
+    36%      { transform: scale(1.4); opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) { .heart { animation: none; opacity: 1; } }
+
+  .eyebrow {
+    font-size: 12px; letter-spacing: .28em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 20px;
+  }
+
+  h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 600; font-size: clamp(32px, 6vw, 48px);
+    line-height: 1.25; letter-spacing: .01em;
+  }
+
+  .sub { color: var(--muted); margin-top: 20px; font-size: 17px; }
+
+  /* ---------- Sections ---------- */
+  h2 {
+    font-family: 'Noto Serif JP', serif; font-weight: 600;
+    font-size: 24px; margin: 72px 0 24px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--border);
+  }
+
+  p + p { margin-top: 14px; }
+  .muted { color: var(--muted); }
+
+  /* ---------- Steps ---------- */
+  .step { display: flex; gap: 20px; margin-top: 28px; }
+  .step-mark {
+    flex: none; width: 40px; height: 40px; border: 1px solid var(--gold);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-family: 'Noto Serif JP', serif; color: var(--gold); font-size: 17px;
+  }
+  .step h3 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+  .step p { color: var(--muted); font-size: 15px; }
+  .step a { color: var(--gold); }
+
+  kbd {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 4px; padding: 1px 7px; font-size: 13px;
+    font-family: ui-monospace, monospace;
+  }
+
+  /* ---------- Prompt block ---------- */
+  .prompt-box {
+    position: relative; margin-top: 28px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; overflow: hidden;
+  }
+  .prompt-head {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 14px 18px; border-bottom: 1px solid var(--border);
+  }
+  .prompt-head span {
+    font-size: 12px; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  button.copy {
+    background: var(--gold); color: #0A0A0A; border: 0; cursor: pointer;
+    font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px;
+    padding: 9px 20px; border-radius: 6px; transition: opacity .15s;
+  }
+  button.copy:hover { opacity: .85; }
+  button.copy:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+  button.copy.done { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
+
+  pre {
+    padding: 20px; max-height: 420px; overflow: auto;
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 12.5px; line-height: 1.6; color: #B8B4AA;
+    white-space: pre-wrap; word-break: break-word;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    margin-top: 88px; padding-top: 28px; border-top: 1px solid var(--border);
+    text-align: center; color: var(--muted); font-size: 13px;
+    letter-spacing: .04em;
+  }
+  footer .jp { font-family: 'Noto Serif JP', serif; color: var(--gold); margin-bottom: 8px; font-size: 15px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="heart" aria-hidden="true"></div>
+    <div class="eyebrow">Vibe Coding Club Hamburg</div>
+    <h1>Dein persönliches<br>lokales Gedächtnis</h1>
+    <p class="sub">Ein privates Second Brain auf deinem Rechner.<br>
+    100&nbsp;% lokal · keine Cloud · keine Kosten · Mac &amp; Windows</p>
+  </header>
+
+  <h2>Was du bekommst</h2>
+  <p>Ein System, das deine Notizen und Dokumente in einer lokalen Datenbank
+  speichert und <strong>inhaltlich durchsuchbar</strong> macht — nicht nur nach
+  Stichwörtern, sondern nach Bedeutung. Mit eigener Web-Oberfläche im Browser,
+  die du später selbst per Vibe Coding anpassen kannst.</p>
+  <p class="muted">Deine Daten verlassen deinen Rechner nie. Die KI für die
+  Suche läuft lokal über Ollama.</p>
+
+  <h2>Installation in drei Schritten</h2>
+
+  <div class="step">
+    <div class="step-mark">一</div>
+    <div>
+      <h3>Claude Code installieren</h3>
+      <p>Die einzige Voraussetzung. Anleitung unter
+      <a href="https://claude.com/claude-code">claude.com/claude-code</a>.
+      Du brauchst ein Claude-Konto.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-mark">二</div>
+    <div>
+      <h3>Prompt kopieren</h3>
+      <p>Klicke unten auf „Prompt kopieren". Der komplette
+      Installations-Auftrag liegt dann in deiner Zwischenablage.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-mark">三</div>
+    <div>
+      <h3>In Claude Code einfügen</h3>
+      <p>Terminal öffnen, <kbd>claude</kbd> starten, Prompt einfügen
+      (<kbd>Cmd+V</kbd> / <kbd>Strg+V</kbd>), Enter. Claude erklärt jeden
+      Schritt und fragt vor jeder Installation um deine Erlaubnis.
+      Dauer: ca. 10–15 Minuten.</p>
+    </div>
+  </div>
+
+  <h2>Der Prompt</h2>
+
+  <div class="prompt-box">
+    <div class="prompt-head">
+      <span>PROMPT.md — für Claude Code</span>
+      <button class="copy" id="copyBtn" onclick="copyPrompt()">Prompt kopieren</button>
+    </div>
+    <pre id="promptText"># Project: Personal Local Memory (RAG) — "Second Brain"
+
+You are setting up a fully local, private memory system on this computer.
+Everything runs offline. No data leaves this machine.
+
+## Your working rules
+- Explain each major step in ONE plain-language sentence before doing it,
+  so a non-programmer understands what is happening and why.
+- Ask for my confirmation before: installing software, downloading models,
+  or creating folders outside the project directory.
+- If a tool is already installed (check first!), skip its installation.
+- At the end, write a beginner-friendly README.md (in German) that explains
+  how the system works and how to use it daily.
+
+## Target architecture
+1. **Storage:** SQLite database with the `sqlite-vec` extension for vector
+   search and FTS5 for keyword search (hybrid retrieval).
+2. **Embeddings:** Ollama running `nomic-embed-text` locally.
+3. **Ingestion:** A Python script that watches `~/memory/inbox/` for new
+   .md/.txt/.pdf files, chunks them (~500 tokens, 50 overlap), embeds them,
+   and stores them in the database. Processed files move to
+   `~/memory/archive/`.
+4. **API:** FastAPI + Uvicorn on http://localhost:8600 with endpoints:
+   - POST /ask     → question → hybrid search (top 5) → optional answer
+                     generated by a local Ollama LLM if one is installed
+   - POST /ingest  → save a text note directly into memory
+   - POST /upload  → accept file uploads (.md/.txt/.pdf) and save them
+                     into ~/memory/inbox/ for the ingestion watcher
+   - GET  /        → serves the frontend
+5. **Frontend:** ONE single self-contained index.html (vanilla JS, no build
+   tools, no npm), with German labels and a friendly, minimal design.
+   Contains:
+   - a chat-style DIALOG area: the user asks in a text field, the answer
+     appears as a conversation (generated by the local Ollama LLM if one
+     is installed, otherwise the top matches), with the matched sources
+     listed under each answer
+   - a DRAG-AND-DROP zone (plus a classic file-picker button) that
+     uploads .md/.txt/.pdf files via POST /upload into the inbox
+   - a "Merk dir das" quick-save: small text field + one button that
+     stores a note directly into memory
+   - an EXPORT button that saves the current answer or the whole
+     conversation as a clean, self-contained HTML document — print-ready,
+     so the browser's print dialog turns it into a PDF; use clear
+     headings so the same export works as a simple handout/presentation
+   Comment the HTML/JS generously so the owner can later customize it.
+6. **MCP server (bonus):** Register the retrieval function as a local MCP
+   server so that any MCP-capable assistant (Claude Code, Claude Desktop, Cursor,
+   Codex CLI, Gemini CLI, ChatGPT Desktop) can query the memory directly.
+
+## Setup steps
+1. Check the operating system (macOS or Windows) and adapt all commands.
+2. Check for / install: Ollama, Python 3.11+ (prefer `uv` as the package
+   manager). Ask before each install.
+3. Pull `nomic-embed-text` via Ollama. Ask before downloading (~270 MB).
+4. Create project folder `~/memory-system/` and data folders
+   `~/memory/inbox/` and `~/memory/archive/`.
+5. Write all code with generous comments in simple English.
+6. Create a start script (`start.command` on macOS / `start.bat` on
+   Windows) that launches Ollama check + ingestion watcher + web server
+   with one double-click.
+7. Test end-to-end: ingest a sample note, query it via the web UI, and
+   show me the result.
+8. Write the German README.md covering: what each component does, how to
+   add memories (inbox folder OR web UI), how to search, how to start/stop,
+   and where the data lives (single SQLite file — easy to back up).
+
+## Important constraints
+- 100% local and free. No cloud APIs, no accounts, no telemetry.
+- Keep total code small and readable (~450 lines across all files).
+- If anything fails, explain the error in plain language and propose a fix
+  before acting.
+
+Start now with step 1.</pre>
+  </div>
+
+  <h2>Danach: täglich benutzen</h2>
+  <p><strong>Erinnerungen hinzufügen:</strong> Dateien (.md, .txt, .pdf) in den
+  Ordner <kbd>~/memory/inbox/</kbd> legen — oder direkt in der Web-Oberfläche
+  notieren.</p>
+  <p><strong>Suchen:</strong> Browser öffnen, <kbd>http://localhost:8600</kbd>,
+  Frage stellen.</p>
+  <p><strong>Starten:</strong> Doppelklick auf <kbd>start.command</kbd> (Mac)
+  bzw. <kbd>start.bat</kbd> (Windows).</p>
+  <p class="muted">Alle Details stehen im README.md, das Claude Code am Ende
+  der Installation für dich schreibt.</p>
+
+  <footer>
+    <div class="jp">間 — Raum für das, was du weißt</div>
+    Vibe Coding Club Hamburg · 2026
+  </footer>
+
+</div>
+
+<script>
+  // Kopiert den kompletten Prompt in die Zwischenablage
+  function copyPrompt() {
+    const text = document.getElementById('promptText').innerText;
+    const btn = document.getElementById('copyBtn');
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = '✓ Kopiert';
+      btn.classList.add('done');
+      setTimeout(() => {
+        btn.textContent = 'Prompt kopieren';
+        btn.classList.remove('done');
+      }, 2500);
+    }).catch(() => {
+      // Fallback für file://-Kontexte, in denen die Clipboard-API blockiert ist
+      const range = document.createRange();
+      range.selectNodeContents(document.getElementById('promptText'));
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      btn.textContent = 'Text markiert — Cmd/Strg+C drücken';
+    });
+  }
+</script>
+</body>
+</html>

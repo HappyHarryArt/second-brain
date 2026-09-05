@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mein Gedächtnis — localhost:8600 (Demo-Ansicht)</title>
+<style>
+  *{box-sizing:border-box}
+  :root{--bg:#f6f4ef;--card:#fff;--ink:#26221c;--mut:#7c7468;--line:#e5dfd3;
+        --acc:#2f6f4f;--acc2:#eaf3ee;--gold:#b8860b;--user:#eef1f6;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font:16px/1.55 -apple-system,'Segoe UI','Helvetica Neue',sans-serif;}
+  .demo-banner{background:#2c2621;color:#f0e6d2;text-align:center;font-size:.85rem;padding:8px 12px;}
+  .app{max-width:780px;margin:0 auto;padding:26px 18px 60px;}
+  header.top{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px;
+    border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:22px;}
+  h1{font-size:1.5rem;margin:0;}
+  .status{font-size:.82rem;color:var(--mut);}
+  .status .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#3aa66a;margin-right:5px;}
+  .chat{display:flex;flex-direction:column;gap:14px;margin-bottom:18px;}
+  .msg{max-width:88%;padding:12px 16px;border-radius:14px;border:1px solid var(--line);}
+  .msg.user{background:var(--user);align-self:flex-end;border-bottom-right-radius:4px;}
+  .msg.bot{background:var(--card);align-self:flex-start;border-bottom-left-radius:4px;}
+  .who{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);margin-bottom:4px;}
+  .msg p{margin:.4em 0;}
+  .fund{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px;}
+  .fund summary{font-size:.82rem;color:var(--acc);cursor:pointer;font-weight:600;}
+  .quelle{background:var(--acc2);border:1px solid #cfe3d7;border-radius:10px;padding:8px 12px;
+          margin:8px 0 0;font-size:.85rem;}
+  .quelle .src{font-weight:700;color:var(--acc);font-size:.78rem;display:block;margin-bottom:2px;}
+  .actions{display:flex;gap:8px;margin-top:10px;}
+  .chip{font-size:.78rem;border:1px solid var(--line);background:var(--card);border-radius:999px;
+        padding:4px 12px;cursor:pointer;color:var(--mut);}
+  .chip:hover{border-color:var(--acc);color:var(--acc);}
+  .composer{display:flex;gap:10px;margin-bottom:26px;}
+  .composer input{flex:1;padding:13px 16px;border:1px solid var(--line);border-radius:12px;
+                  font:inherit;background:var(--card);}
+  .btn{padding:12px 20px;border:none;border-radius:12px;background:var(--acc);color:#fff;
+       font:600 .95rem -apple-system,sans-serif;cursor:pointer;}
+  .btn.sec{background:var(--card);color:var(--ink);border:1px solid var(--line);}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;}
+  .panel h2{font-size:.95rem;margin:0 0 10px;}
+  .drop{border:2px dashed #c9bfa9;border-radius:12px;padding:26px 14px;text-align:center;
+        color:var(--mut);font-size:.9rem;background:#fbfaf7;}
+  .drop b{color:var(--ink);}
+  .drop .pick{margin-top:8px;display:inline-block;font-size:.82rem;color:var(--acc);
+              text-decoration:underline;cursor:pointer;}
+  .merk textarea{width:100%;height:64px;padding:10px 12px;border:1px solid var(--line);
+                 border-radius:10px;font:inherit;resize:none;background:#fbfaf7;}
+  .merk .btn{margin-top:8px;width:100%;background:var(--gold);}
+  .recent{margin-top:10px;font-size:.82rem;color:var(--mut);}
+  .recent li{margin:.3em 0;}
+  footer{margin-top:26px;font-size:.78rem;color:var(--mut);text-align:center;}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}.msg{max-width:100%}}
+</style>
+</head>
+<body>
+<div class="demo-banner">Demo-Ansicht · So sieht die Oberfläche des Starterpakets (v2) nach der Installation aus — echte Adresse: http://localhost:8600</div>
+<div class="app">
+
+<header class="top">
+  <h1>🧠 Mein Gedächtnis</h1>
+  <div class="status"><span class="dot"></span>Ollama läuft · 1.284 Erinnerungen · Denk-Modell: gemma3:4b</div>
+</header>
+
+<div class="chat">
+  <div class="msg user">
+    <div class="who">Du</div>
+    <p>Was habe ich mir zur Kündigungsfrist meiner Wohnung notiert?</p>
+  </div>
+  <div class="msg bot">
+    <div class="who">Dein Gedächtnis</div>
+    <p>Deine Kündigungsfrist beträgt <strong>drei Monate zum Monatsende</strong> — du hast dir
+    dazu notiert, dass die Kündigung schriftlich mit Unterschrift erfolgen muss und du sie
+    vorsichtshalber per Einschreiben schicken wolltest. Außerdem wolltest du vorher die
+    Übergabeprotokoll-Fotos von 2023 heraussuchen.</p>
+    <details class="fund">
+      <summary>3 Fundstellen anzeigen</summary>
+      <div class="quelle"><span class="src">mietvertrag-notizen.md · 12.03.2024</span>
+        „…Kündigungsfrist 3 Monate zum Monatsende (§ 4), nur schriftlich mit Unterschrift…"</div>
+      <div class="quelle"><span class="src">todo-umzug.txt · 02.06.2026</span>
+        „…Kündigung als Einschreiben! Vorher Übergabeprotokoll-Fotos raussuchen (Ordner 2023)…"</div>
+      <div class="quelle"><span class="src">Mietvertrag_2023.pdf · Seite 2</span>
+        „…beträgt die Kündigungsfrist für den Mieter drei Monate…"</div>
+    </details>
+    <div class="actions">
+      <span class="chip">📄 Als Dokument exportieren (HTML/PDF)</span>
+      <span class="chip">📋 Antwort kopieren</span>
+    </div>
+  </div>
+</div>
+
+<div class="composer">
+  <input type="text" placeholder="Frag dein Gedächtnis …">
+  <button class="btn">Fragen</button>
+</div>
+
+<div class="grid">
+  <div class="panel">
+    <h2>📥 Erinnerungen hinzufügen</h2>
+    <div class="drop">
+      <b>Dateien hierher ziehen</b><br>
+      Markdown · Text · PDF<br>
+      <span class="pick">oder Datei auswählen …</span>
+    </div>
+    <ul class="recent">
+      <li>✓ eben eingelesen: <em>arztbrief-juli.pdf</em> (14 Abschnitte)</li>
+      <li>✓ gestern: <em>projektideen.md</em> (6 Abschnitte)</li>
+    </ul>
+  </div>
+  <div class="panel merk">
+    <h2>✎ Merk dir das</h2>
+    <textarea placeholder="Kurzer Gedanke, Fakt oder Korrektur — ein Klick, gespeichert."></textarea>
+    <button class="btn">Merk dir das</button>
+    <div class="recent">Zuletzt gemerkt: „Oma’s Apfelkuchen: 6 Boskoop, nicht 4." · heute 09:12</div>
+  </div>
+</div>
+
+<footer>
+  Läuft komplett auf diesem Rechner · SQLite: ~/memory/memory.db · Inbox: ~/memory/inbox/ ·
+  Oberfläche = eine HTML-Datei (Nachtrag 2: anpassen per Zuruf)
+</footer>
+
+</div>
+</body>
+</html>
