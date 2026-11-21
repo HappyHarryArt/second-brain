@@ -5,7 +5,7 @@ ohne Konten, ohne laufende Kosten. Aufgebaut per Kopier-Prompt mit einem KI-Codi
 der auf dem Rechner Dateien anlegen und Befehle ausführen darf (Claude Code, Codex CLI,
 Gemini CLI, Cursor, Aider). Ein reiner Chat im Browser reicht dafür nicht.
 
-Live-Fassung: https://dons-dairy.okoma.app/second-brain
+Live-Fassung: https://second-brain.happyharry.art
 
 ## Was hier liegt
 
